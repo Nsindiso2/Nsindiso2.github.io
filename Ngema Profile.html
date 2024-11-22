@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nsindiso Mncedisi Ngema - Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: turquoise;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            background-color: silver;
+            padding: 10px 0;
+        }
+        .tabs button {
+            background-color: silver;
+            border: none;
+            color: black;
+            font-size: 1em;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .tabs button:hover {
+            background-color: #dcdcdc;
+        }
+        .tabs button.active {
+            background-color: white;
+            color: black;
+            border-bottom: 2px solid black;
+        }
+        .content {
+            max-width: 800px;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: turquoise;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .profile-section {
+            text-align: center;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid black;
+            background-color: turquoise;
+        }
+        h1, h2 {
+            color: black;
+        }
+        .paragraph {
+            margin-top: 20px;
+            text-align: justify;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #e6f3e6;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            transition: transform 0.3s;
+            cursor: zoom-in;
+        }
+        .modal img.zoomed {
+            transform: scale(2);
+            cursor: zoom-out;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+        <button class="active" onclick="showSection('home')">Home</button>
+        <button onclick="showSection('education')">Education</button>
+        <button onclick="showSection('skills')">Skills</button>
+        <button onclick="showSection('certifications')">Certification and Badges</button>
+		<button onclick="showSection('projects')">Projects</button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <!-- Home Section -->
+        <div id="home" class="section active">
+            <div class="profile-section">
+                <img src="profile.jpeg" alt="Nsindiso Mncedisi Ngema" class="profile-pic">
+                
+                <!-- Summary Section -->
+                <div class="paragraph">
+                    <h1>Hello I'm Nsindiso Mncedisi Ngema</h1>
+                     <p>
+                        I am Nsindiso Mncedisi Ngema, an enthusiastic and diligent IT graduate with a Diploma in Information Technology from the Vaal University of Technology.
+                        My journey in the tech world began with a deep interest in networking, cloud computing, and software development.
+                        I am passionate about leveraging technology to solve real-world problems and enhance business operations.
+                    </p>
+                    <p>
+                        I have built a solid foundation in programming (JAVA,Visual Basic, HTML, PHP,PL/SQl), cloud services, and networking through my coursework and certifications.
+                        With certifications from Cisco Networking Academy (CCNA, IT Essentials) and AWS Educate (Cloud, Security, and Machine Learning), 
+                        I have honed my skills in both hardware and software environments.
+                    </p>
+                    <p>
+                        My goal is to advance in the IT industry by focusing on network engineering, cloud infrastructure, and system administration roles.
+                        I am driven by a desire to continuously learn and grow in this fast-paced industry while contributing to innovative tech solutions.
+                    </p>
+                    <p>
+                        Outside of tech, I am passionate about problem-solving, exploring new technologies, and being part of projects that challenge my skills. 
+                        I am eager to embark on a career journey where I can contribute to dynamic teams and projects, making a meaningful impact in the digital space.
+                    </p>
+                </div>
+            </div>
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <h2>Contact Information</h2>
+                <p>Phone: 0606402078 / 0661373312</p>
+                <p>Email: <a href="mailto:nsindisongema28@gmail.com" style="color: white;">nsindisongema28@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/nsindiso-ngema" target="_blank" style="color: white;">www.linkedin.com/in/nsindiso-ngema</a></p>
+            </div>
+        </div>
+
+        <!-- Education Background Section -->
+        <div id="education" class="section">
+            <h2>Education Background</h2>
+            <ul>
+                <li>
+                    <strong>National Diploma in Information Technology</strong> - Vaal University of Technology (2020 - 2023)
+                    <ul>
+                        <li><strong>Core Subjects:</strong>
+                            <ul>
+                                <li><strong>Programming Languages:</strong> Visual Basic, Java, HTML, PHP</li>
+                                <li><strong>Database Management:</strong> 
+                                    <ul>
+                                        <li>Entity-Relationship Diagrams (ERDs)</li>
+                                        <li>Structured Query Language (SQL): Creating tables, inserting data, data manipulation, and data retrieval</li>
+                                        <li>PL/SQL for advanced database management and stored procedures</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Web Development:</strong> Full-stack development using HTML, CSS, and PHP</li>
+                                <li><strong>Network Fundamentals:</strong> 
+                                    <ul>
+                                        <li>CCNA (Cisco Certified Network Associate) curriculum covering network protocols, configuration, and troubleshooting</li>
+                                        <li>Introduction to Azure Fundamentals (Cloud services and virtualization)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Cloud Computing:</strong> 
+                                    <ul>
+                                        <li>Azure Fundamentals: Understanding cloud concepts, Azure services, and architecture</li>
+                                        <li>AWS Educate Certifications: Cloud concepts, security fundamentals, and introduction to machine learning</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Software Development:</strong> Object-Oriented Programming with Java and Visual Basic</li>
+                                <li><strong>IT Essentials:</strong> PC Hardware, Software installation, troubleshooting, and maintenance</li>
+                                <li><strong>Legal Aspects of IT:</strong> Understanding IT governance, compliance, and legal considerations in technology</li>
+                            </ul>
+                        </li>
+                        <li><strong>Projects & Practical Work:</strong>
+                            <ul>
+                                <li>Developed a database management system using MySQL for a student records project</li>
+                                <li>Designed and implemented a company network infrastructure with routers and switches</li>
+                                <li>Created an interactive web application using PHP and MySQL for a small business</li>
+                                <li>Deployed a cloud-based virtual machine and services on Microsoft Azure</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills" class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming: Visual Basic, Java, HTML, PHP, PL/SQL</li>
+                <li>Database Management: MySQL, Oracle, PL/SQL</li>
+                <li>Cloud Computing: AWS, Azure</li>
+                <li>Networking: TCP/IP, Routing & Switching, CCNA</li>
+                <li>Web Development: HTML, PHP, JavaScript</li>
+                <li>Tools: Jupyter Notebooks, RStudio, Git</li>
+                <li>Machine Learning Fundamentals</li>
+            </ul>
+        </div>
+
+        <!-- Certifications and Badges Section -->
+        <div id="certifications" class="section">
+            <h2>Certification and Badges</h2>
+            <div class="gallery">
+                <img src="Diploma.jpeg" alt="Certificate 1" onclick="openModal(this.src)">
+                <img src="Data Science 101.jpeg" alt="Certificate 2" onclick="openModal(this.src)">
+                <img src="Data Science Tools.png" alt="Certificate 3" onclick="openModal(this.src)">
+                <img src="CCNAv7.jpeg" alt="Certificate 4" onclick="openModal(this.src)">
+                <img src="IT Essentials.jpeg" alt="Certificate 5" onclick="openModal(this.src)">
+                <img src="AWS Badges.jpeg" alt="Badge 1" onclick="openModal(this.src)">
+                <img src="CCNA, Cloud 101, Compute.jpeg" alt="Badge 2" onclick="openModal(this.src)">
+                <img src="Serveless, Machine learning Foundations, DeepRacer.jpeg" alt="Badge 3" onclick="openModal(this.src)">
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li>Developed a basic website using HTML, CSS, and JavaScript for a local business</li>
+                <li>Built a student management system using Java and MySQL</li>
+                <li>Designed a simple cloud infrastructure for a company using AWS and Azure services</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal for Enlarging Images -->
+    <div id="modal" class="modal">
+        <img id="modal-image" src="" alt="Certificate Image">
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+
+    <script>
+        // Tab navigation functionality
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            const tabs = document.querySelectorAll('.tabs button');
+            
+            // Hide all sections and remove active class from tabs
+            sections.forEach(section => section.classList.remove('active'));
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show the clicked section and add active class to corresponding tab
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Modal functionality to view certificate images
+        function openModal(src) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            modalImage.src = src;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
